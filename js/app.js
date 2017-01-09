@@ -21,6 +21,7 @@ app.controller('controller', [
 		if (!$scope.inputLine){
 			historyEl.append($scope.inputLinePrefix);
 			historyEl.append('<br>');
+			bodyEl.scrollTop = bodyEl.scrollHeight;
 			return;
 		}
 		$scope.runCommand(line || $scope.inputLine);
@@ -35,7 +36,9 @@ app.controller('controller', [
 			historyEl.append('<br>');
 		}
 		$scope.inputLine = '';
-		bodyEl.scrollTop = bodyEl.scrollHeight;
+		$timeout(function(){
+			bodyEl.scrollTop = bodyEl.scrollHeight;
+		}, 50, false);
 	}
 
 	$scope.runCommand = function(command){
@@ -54,7 +57,7 @@ app.controller('controller', [
 			return;
 		}
 		$scope.showOutput('<div class="red-text">unrecognized command: '
-		 + command + '</div>');
+		 + command + '</div>', command);
 	}
 
 
@@ -63,11 +66,19 @@ app.controller('controller', [
 			document.querySelector('#history')
 		);
 		bodyEl = document.getElementById('cli-body');
-		$scope.playCommands(['profile', 'social']);
+		$scope.playCommands(['profile', 'social'], function(){
+			$scope.cursorOffset = 0;
+			$scope.focus();
+		});
+		
+	}
+
+	$scope.focus = function(){
+		document.getElementById('input').focus();
 	}
 
 
-	$scope.playCommands = function(commands, i=0, cur=0){
+	$scope.playCommands = function(commands, callback, i=0, cur=0){
 
 		if (i == commands[cur].length + 1){
 			$scope.submitLine(commands[cur]);
@@ -75,15 +86,56 @@ app.controller('controller', [
 			i = 0;
 		}
 		if (cur == commands.length){
+			$scope.cursorOffset = 0;
+			callback();
 			return;
 		}
 
 		$scope.inputLine = commands[cur].substr(0, i);
 
+		$scope.cursorOffset = i * 9;
+
 		$timeout(function(){
-			$scope.playCommands(commands, i + 1, cur);	
+			$scope.playCommands(commands, callback, i + 1, cur);	
 		}, Math.random() * 300)
 	}
 
 	$scope.init();
+
+
+
+	$scope.moveCursor = function(event){
+		console.log(event);
+		var w = 9;
+		var offset = 0;
+		if (
+				(event.keyCode >= 48 && event.keyCode <= 90)
+				|| event.keyCode == 32
+				|| (event.keyCode >= 186 && event.keyCode <= 222)
+				){
+			offset = w;
+		}
+		if (event.keyCode == 8){
+			offset = -w;
+		}
+		if (event.keyCode == 37){
+			offset = -w;
+		}
+		if (event.keyCode == 39){
+			offset = w;
+		}
+		if (event.keyCode == 13){
+			$scope.submitLine();
+			$scope.cursorOffset = 0;
+			return;
+		}
+
+		var newOffest = $scope.cursorOffset + offset;
+		$scope.cursorOffset = Math.min(
+			Math.max(newOffest, 0),
+			w * ($scope.inputLine.length + 1)
+		);
+
+	}
+
 }]);
