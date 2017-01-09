@@ -39,12 +39,13 @@ a{
 	color: #fff;
 	background: #353B46;
 	height:400px;
-	padding: 5px;
+	padding: 18px;
 	overflow: hidden;
 	overflow-y:visible;
-	font-size: 1.25em !important;
+	font-size: 18px !important;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+	line-height: 18px;
 }
 
 input{
@@ -57,11 +58,18 @@ input{
 	flex-direction: row;
 	align-items: center;
 	clear: both;
-	span{
-		margin-right: 20px;
+	.prefix{
+		margin-right: 18px;
 	}
-	input{
+	.input-wrapper{
+		position: relative;
 		flex: 1;
+		.input{
+			line-height: 18px;
+			height: 18px;
+			width: 100%;
+		}
+
 	}
 
 }
@@ -72,4 +80,14 @@ input{
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
+}
+
+.cursor{
+	width: 9px;
+	border-bottom: 4px solid transparent;
+	animation: blink .5s step-end infinite alternate;
+}
+
+@keyframes blink{
+	50% {border-bottom-color: #fff;}
 }

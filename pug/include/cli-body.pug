@@ -1,5 +1,9 @@
+input#input(type='text' ng-model='inputLine' ng-keydown='moveCursor($event)' ng-cloak ng-trim='false' ng-blur='focus()' style='position:fixed;right:-9999px')
+
 #cli-body.row.cli-body
 	#history
-	form.input-line(ng-submit='submitLine()')
-		span(ng-cloak) {{inputLinePrefix}}
-		input(type='text' ng-model='inputLine' ng-cloak)
+	.input-line
+		.prefix(ng-cloak) {{inputLinePrefix}}
+		.input-wrapper
+			.input(ng-cloak) {{inputLine}}
+			.cursor(style='position:absolute;' ng-style='{left: cursorOffset}')
