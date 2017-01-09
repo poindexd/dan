@@ -1,0 +1,23 @@
+html
+	head
+		link(rel='stylesheet' href='/css/index.css')
+		link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
+		link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Inconsolata')
+		title Dan Poindexter
+		
+	body(ng-app='app' ng-controller='controller')
+		header
+
+		main(ng-cloak)
+			.container: .row: .card
+				include include/cli-header.pug
+				include include/cli-body.pug
+
+		footer
+			.container.center
+				p.grey-text.text-darken-2 &copy; Dan Poindexter 2017
+
+
+		script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js')
+		script(src='js/command-templates.js')
+		script(src='js/app.js')

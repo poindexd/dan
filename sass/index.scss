@@ -1,0 +1,75 @@
+@import "materialize/materialize";
+//@import "font-awesome/font-awesome";
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	font-family: "Inconsolata", monospace;
+	background: #262626;
+	overflow: hidden;
+}
+
+main {
+	display: flex;
+	flex: 1 0;
+	align-content: center;
+	align-items: center;
+}
+
+header, footer{
+	display: flex;
+	height: 75px;
+}
+
+a{
+	color: white;
+}
+
+.row{
+	margin-bottom: 0px;
+}
+.cli-header{
+	background: #EEF1F5;
+	padding: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.cli-body{
+	color: #fff;
+	background: #353B46;
+	height:400px;
+	padding: 5px;
+	overflow: hidden;
+	overflow-y:visible;
+	font-size: 1.25em !important;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+input{
+	background: transparent;
+	border: none;
+	outline: none;
+}
+.input-line{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	clear: both;
+	span{
+		margin-right: 20px;
+	}
+	input{
+		flex: 1;
+	}
+
+}
+
+.icon{
+	fill: #fff;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

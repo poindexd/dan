@@ -1,0 +1,12 @@
+mixin link(title, icon, url)
+	.col.s2.center
+		//a(href=url): i.fa.fa-2x(class=icon)
+		a(href=url): img(src=icon style='width: 40px' alt=title)
+br
+.row
+	+link('Facebook', './img/icons/facebook.svg', 'https://facebook.com/danmanpoindexter')
+	+link('LinkedIn', './img/icons/linkedin.svg', 'https://linkedin.com/in/danpoindexter')
+	+link('GitHub', './img/icons/github.svg', 'https://github.com/poindexd')
+	+link('Soundcloud', './img/icons/soundcloud-logo.svg', 'https://soundcloud.com/dannyp93')
+	+link('Codepen', './img/icons/codepen.svg', 'https://codepen.io/poindexd')
+	+link('Mail', './img/icons/envelope-o.svg', 'mailto:poindexd@umich.edu')
