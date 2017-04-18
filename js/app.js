@@ -14,7 +14,28 @@ app.controller('controller', [
 	$scope.inputLinePrefix = '$';
 	$scope.inputLine = '';
 
-	$scope.commands = ['help'];
+	$scope.commands = [
+		{
+			name: 'help',
+			description: 'Display the help menu'
+		},
+		{
+			name: 'profile',
+			description: 'View the intro'
+		},
+		{
+			name: 'social',
+			description: 'Find me on the web'
+		},
+		{
+			name: 'bio',
+			description: 'Let me introduce myself'
+		},
+		{
+			name: 'clear',
+			description: 'Clear the console'
+		}
+	];
 	
 	$scope.submitLine = function(line){
 
@@ -48,7 +69,7 @@ app.controller('controller', [
 			return;
 		}
 
-		if (command == 'help' || command == 'profile' || command == 'social'){
+		if (command == 'help' || command == 'profile' || command == 'social' || command == 'bio'){
 			$templateRequest('command-template-' + command).then(function(tpl){
 				var template = angular.element(tpl);
 				//element.after(template);

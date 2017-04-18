@@ -1,3 +1,9 @@
-span Commands:
-div(ng-repeat='command in commands')
-	span {{command}}
+p This is an <strong>experimental</strong> command line interface. Let me know what you think!
+p <strong>Commands:</strong>
+.container
+	div(ng-repeat='command in commands')
+		.row
+			.col.s4
+				span {{command.name}}
+			.col.s8
+				span {{command.description}}

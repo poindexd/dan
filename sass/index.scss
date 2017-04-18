@@ -1,6 +1,11 @@
 @import "materialize/materialize";
 //@import "font-awesome/font-awesome";
 
+strong{
+	color: #00f6ff;
+	font-weight: 700;
+}
+
 body {
 	display: flex;
 	min-height: 100vh;
