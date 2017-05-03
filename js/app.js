@@ -446,8 +446,11 @@ app.controller('controller', [
 		document.getElementById('input').focus();
 	}
 
-	$scope.playCommands = function(commands, callback, i=0, cur=0){
+	$scope.playCommands = function(commands, callback, i, cur){
 
+		i = i || 0;
+		cur = cur || 0;
+		
 		if (i == commands[cur].length + 1){
 			$scope.submitLine(commands[cur]);
 			cur = cur+1;

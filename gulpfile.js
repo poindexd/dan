@@ -44,9 +44,9 @@ gulp.task('compile-commands', function() {
 
 gulp.task('compress', function() {
   return gulp.src('./js/**/*.js')
-    //.pipe(uglify({
-    //  preserveComments: 'license'
-    //}).on('error', console.error.bind(console)))
+    .pipe(uglify({
+      preserveComments: 'license'
+    }).on('error', console.error.bind(console)))
     .pipe(gulp.dest('dist/js'))
     .pipe(connect.reload());
 });
