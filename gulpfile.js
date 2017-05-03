@@ -39,8 +39,7 @@ gulp.task('compile-commands', function() {
         standalone: true,
         module: 'commandTemplates'
       }))
-    .pipe(gulp.dest('dist/js'))
-    .pipe(connect.reload());
+    .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('compress', function() {
@@ -71,7 +70,7 @@ gulp.task('watch', function() {
   gulp.watch('pug/**/*.pug', ['pug']);
   gulp.watch('sass/**/*.scss', ['sass']);
   gulp.watch('js/**/*.js', ['compress']);
-  gulp.watch('commands/**/*.pug', ['compile-commands']);
+  gulp.watch('commands/**/*.pug', ['compile-commands', 'pug']);
 });
 
 gulp.task('default', [

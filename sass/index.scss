@@ -1,8 +1,14 @@
 @import "materialize/materialize";
+@import "ng/ng-image-gallery";
 //@import "font-awesome/font-awesome";
 
+a:hover{
+	cursor: pointer;
+}
+
 strong{
-	color: #00f6ff;
+	//color: #00f6ff;
+	//color: black;
 	font-weight: 700;
 }
 
@@ -18,13 +24,17 @@ body {
 main {
 	display: flex;
 	flex: 1 0;
-	align-content: center;
-	align-items: center;
+	//position: relative;
+	//align-content: center;
+	//align-items: center;
 }
 
 header, footer{
 	display: flex;
-	height: 75px;
+}
+
+footer{
+	height: 125px;
 }
 
 a{
@@ -35,7 +45,8 @@ a{
 	margin-bottom: 0px;
 }
 .cli-header{
-	background: #EEF1F5;
+	@extend .grey;
+	@extend .white-text;
 	padding: 5px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
@@ -43,7 +54,7 @@ a{
 .cli-body{
 	color: #fff;
 	background: #353B46;
-	height:400px;
+	height:100px;
 	padding: 18px;
 	overflow: hidden;
 	overflow-y:visible;
@@ -79,20 +90,141 @@ input{
 
 }
 
+#fs{
+	//display: flex;
+	width: 200px;
+}
+
+#output-window{
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	//justify-content: flex-end;
+	overflow-y: auto;
+	
+	//height: 100%;
+
+	#output{
+		@extend .grey;
+		@extend .lighten-3;
+		margin-top: auto;
+		//margin-bottom: 0;
+		//align-self: flex-end;
+		padding: 18px;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+
+		.card, .card-panel{
+			box-shadow: none;
+			border-radius: 10px;
+		}
+	}
+}
+
 .icon{
 	fill: #fff;
 }
+
+
+::-webkit-scrollbar {
+  margin-left: -8px;
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px transparent;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #ccc; }
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #cccccc; }
+
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
 
-.cursor{
+.cursor {
 	width: 9px;
 	border-bottom: 4px solid transparent;
 	animation: blink .5s step-end infinite alternate;
 }
 
-@keyframes blink{
+@keyframes blink {
 	50% {border-bottom-color: #fff;}
+}
+
+
+.card {
+	&.medium{
+		.card-content {
+			max-height: 100%;
+			text-overflow: ellipsis;
+
+		}
+	}
+
+	.chip {
+		margin-right: 5px;
+		margin-bottom: 5px;
+		color: white;
+	}
+}
+
+#resume{
+	padding: 60px 80px;
+
+	.blockquote{
+		p, h6{
+			margin: 0;
+		}
+    padding: 10px 0px;
+	}
+
+	@media print{
+		padding: 0px !important;
+	}
+
+	font-family: 'Lato', sans-serif;
+	h6{
+		font-weight: 700;
+	}
+	ul {
+
+		&.dashed{
+			list-style-type: none;
+			//margin: 0;
+
+			li {
+				text-indent: -13px;
+		    &:before{
+		    	content:'\2014';
+		    	text-indent: -5px;
+		    }
+			}
+		}
+		
+		li {
+			font-weight: 300;
+	    //list-style-type: disc;
+	    //list-style-type: none;
+	    line-height: 1.5em;
+	    //margin-left: 15px;
+
+  	}
+	}
+	blockquote {
+		border-left: 2px solid #eee;
+	}
+	p{
+		font-weight: 300;
+	}
 }

@@ -1,0 +1,26 @@
+br
+.row
+	.col.s12.m6.l4(ng-repeat='project in projects | limitTo: projectLimit')
+		.card.medium(ng-click='project.detail = true' style='cursor: pointer')
+			.card-image(ng-show='!project.detail')
+				img(ng-src='{{project.image}}')
+				
+			.card-content(ng-show='!project.detail')
+				p: strong.black-text {{project.title}}
+				p.black-text {{project.description}}
+
+			.card-content(ng-show='project.detail')
+				p: strong.black-text {{project.title}}
+					a.black-text(ng-click='project.detail = false;$event.stopPropagation()')
+						i.material-icons.right() close
+				br
+				ng-image-gallery(images='project.gallery')
+
+			.card-action(ng-show='project.detail')
+				a(ng-repeat='link in project.links' ng-href='{{link.url}}') {{link.title}}
+
+			.card-action(ng-show='!project.detail')
+				.chip(ng-repeat='tag in project.tags' ng-class='tags[tag].color') {{tags[tag].text}}
+
+.row: .col.s12.center
+	a.chip.grey.white-text(ng-show='projectLimit < projects.length' ng-click='projectLimit = projectLimit + 6') + load more

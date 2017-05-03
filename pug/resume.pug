@@ -1,0 +1,20 @@
+html
+	head
+		link(rel='stylesheet' href='/css/resume.css')
+		link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
+		link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Inconsolata:400,700|Lato:300,400,700')
+		title Dan Poindexter Resume
+		style.
+			.btn{
+				padding: 10px 20px;
+				border-radius: 5px;
+			}
+	body
+		.container(style='width:800px')
+			include ../commands/resume.pug
+			div()
+			a(style='position:fixed; right: 20px; top: 20px' onclick='window.print()').btn.blue print / download
+				i.material-icons.left print
+			//-a(style='position:absolute; right: 20px; top: 20px').btn.red pdf
+				i.material-icons.left cloud_download
+
