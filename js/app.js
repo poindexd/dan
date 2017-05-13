@@ -100,27 +100,27 @@ app.controller('controller', [
 			gallery: [
 				{
 					id: 1,
-					url: 'img/gallery/wellopp/redesign.png',
+					url: 'img/gallery/wellopp/redesign.png', thumbUrl: 'img/thumbnails/wellopp/redesign.png',
 					title: 'Redesigned the existing client-facing dashboard, adding a timeline  and report feature.'
 				},
 				{
 					id: 2,
-					url: 'img/gallery/wellopp/wellopp.png',
+					url: 'img/gallery/wellopp/wellopp.png', thumbUrl: 'img/thumbnails/wellopp/wellopp.png',
 					title: 'The new wellopp.com website, as part of the rebranding from Homeward Healthcare.'
 				},
 				{
 					id: 3,
-					url: 'img/gallery/wellopp/splash.png',
+					url: 'img/gallery/wellopp/splash.png', thumbUrl: 'img/thumbnails/wellopp/splash.png',
 					title: 'The splash header of wellopp.com'
 				},
 				{
 					id: 4,
-					url: 'img/gallery/wellopp/556.jpg',
+					url: 'img/gallery/wellopp/556.jpg', thumbUrl: 'img/thumbnails/wellopp/556.jpg',
 					title: 'At Behavior Design Bootcamp in Healdsburg, California with @bjfogg'
 				},
 				{
 					id: 5,
-					url: 'img/gallery/wellopp/mhacks.jpg',
+					url: 'img/gallery/wellopp/mhacks.jpg', thumbUrl: 'img/thumbnails/wellopp/mhacks.jpg',
 					title: 'Attended MHacks 8 as a mentor. Hackathon in Detroit, MI with over 1000 hackers.'
 				}
 			],
@@ -140,7 +140,7 @@ app.controller('controller', [
 			gallery: [
 				{
 					id: 2,
-					url: 'img/gallery/devicepreview/tablet.png',
+					url: 'img/gallery/devicepreview/tablet.png', thumbUrl: 'img/thumbnails/devicepreview/tablet.png',
 				},
 				{
 					id: 3,
@@ -148,7 +148,7 @@ app.controller('controller', [
 				},
 				{
 					id: 1,
-					url: 'img/gallery/devicepreview/desktop.png',
+					url: 'img/gallery/devicepreview/desktop.png', thumbUrl: 'img/thumbnails/devicepreview/desktop.png',
 				},
 			],
 			description: 'A module for accurate device previews. Features iframe isolation, scope transclusion, and viewport/unit correction.'
@@ -159,32 +159,32 @@ app.controller('controller', [
 			gallery: [
 				{
 					id: 1,
-					url: 'img/gallery/fooblox/scratch.png',
+					url: 'img/gallery/fooblox/scratch.png', thumbUrl: 'img/thumbnails/fooblox/scratch.png',
 					title: 'Original concept. The goal was to describe progams with colored blocks. The plan was to 1) identify the blocks by color using object recognition, 2) convert the block matrix into a python expression string, 3) execute the expression string and collect output.'
 				},
 				{
 					id: 2,
-					url: 'img/gallery/fooblox/142.jpg',
+					url: 'img/gallery/fooblox/142.jpg', thumbUrl: 'img/thumbnails/fooblox/142.jpg',
 					title: 'I used a webcam attached to a lamp and the c++ OpenCV library to perform object recognition.'
 				},
 				{
 					id: 3,
-					url: 'img/gallery/fooblox/005.jpg',
+					url: 'img/gallery/fooblox/005.jpg', thumbUrl: 'img/thumbnails/fooblox/005.jpg',
 					title: '24 hours into HackingEDU hackathon. Over 1000 hackers from around the world.'
 				},
 				{
 					id: 4,
-					url: 'img/gallery/fooblox/lesson.jpg',
+					url: 'img/gallery/fooblox/lesson.jpg', thumbUrl: 'img/thumbnails/fooblox/lesson.jpg',
 					title: 'Web UI includes learning lessons and challenges, designed to teach programming basics.'
 				},
 				{
 					id: 5,
-					url: 'img/gallery/fooblox/present.jpg',
+					url: 'img/gallery/fooblox/present.jpg', thumbUrl: 'img/thumbnails/fooblox/present.jpg',
 					title: 'I was selected as a finalist and had the opportunity to present.'
 				},
 				{
 					id: 6,
-					url: 'img/gallery/fooblox/devpost.jpg',
+					url: 'img/gallery/fooblox/devpost.jpg', thumbUrl: 'img/thumbnails/fooblox/devpost.jpg',
 					title: 'Foo Blox was selected as a Devpost staff pick and featured in their newsletter.'
 				}
 
@@ -200,17 +200,17 @@ app.controller('controller', [
 			gallery: [
 				{
 					id: 1,
-					url: 'img/gallery/msight/106.jpg',
+					url: 'img/gallery/msight/106.jpg', thumbUrl: 'img/thumbnails/msight/106.jpg',
 					title: 'The feedback sleeve provides directional assistance using vibration.'
 				},
 				{
 					id: 2,
-					url: 'img/gallery/msight/107.jpg',
+					url: 'img/gallery/msight/107.jpg', thumbUrl: 'img/thumbnails/msight/107.jpg',
 					title: 'Presentations. I am the zombie that sacrificed sleep to fix bugs'
 				},
 				{
 					id: 3,
-					url: 'img/gallery/msight/087.jpg',
+					url: 'img/gallery/msight/087.jpg', thumbUrl: 'img/thumbnails/msight/087.jpg',
 					title: 'The team: me, Ethan Weber (MIT), Jason Lin (USC/Georgia Tech), Kartikay Goyle (U of Toronto)'
 				},
 				{
@@ -219,7 +219,7 @@ app.controller('controller', [
 				},
 				{
 					id: 5,
-					url: 'img/gallery/msight/086.jpg',
+					url: 'img/gallery/msight/086.jpg', thumbUrl: 'img/thumbnails/msight/086.jpg',
 					title: 'Our team won "Best use of Microsoft Technology" and Microsoft Bands'
 				}
 			],
@@ -231,12 +231,12 @@ app.controller('controller', [
 			gallery: [
 				{
 					id: 1,
-					url: 'img/gallery/maposaur/maposaur_console.png',
+					url: 'img/gallery/maposaur/maposaur_console.png', thumbUrl: 'img/thumbnails/maposaur/maposaur_console.png',
 					title: 'The Angular web dashboard, used by venues to manage events'
 				},
 				{
 					id: 2,
-					url: 'img/gallery/maposaur/010.png',
+					url: 'img/gallery/maposaur/010.png', thumbUrl: 'img/thumbnails/maposaur/010.png',
 					title: 'The Android app with event areas shown'
 				}
 
@@ -277,7 +277,7 @@ app.controller('controller', [
 			gallery: [
 				{
 					id: 1,
-					url: 'img/gallery/afo.jpg',
+					url: 'img/gallery/afo.jpg', thumbUrl: 'img/thumbnails/afo.jpg',
 					title: 'The manual process of creating Ankle/Foot orthotics takes over 3 weeks. With 3D printing, the time can be cut down to hours. Our team used openSCAD on Node.js to generate AFOs from sculpted models. See slides for more details.'
 				}
 			],
@@ -300,12 +300,12 @@ app.controller('controller', [
 			gallery: [
 				{
 					id: 1,
-					url: 'img/gallery/iamcampaigne/preview.jpg',
+					url: 'img/gallery/iamcampaigne/preview.jpg', thumbUrl: 'img/thumbnails/iamcampaigne/preview.jpg',
 					title: 'Original design, light variant'
 				},
 				{
 					id: 2,
-					url: 'img/gallery/iamcampaigne/preview_3.jpg',
+					url: 'img/gallery/iamcampaigne/preview_3.jpg', thumbUrl: 'img/thumbnails/iamcampaigne/preview_3.jpg',
 					title: 'Final design, dark variant'
 				}
 
@@ -321,12 +321,12 @@ app.controller('controller', [
 			gallery: [
 				{
 					id: 1,
-					url: 'img/gallery/arenabros/050.jpg',
+					url: 'img/gallery/arenabros/050.jpg', thumbUrl: 'img/thumbnails/arenabros/050.jpg',
 					title: 'Arena Bros was built in Unity using C#. The player can run, block, hit, and throw energy balls against an ai opponent.'
 				},
 				{
 					id: 2,
-					url: 'img/gallery/arenabros/053.jpg',
+					url: 'img/gallery/arenabros/053.jpg', thumbUrl: 'img/thumbnails/arenabros/053.jpg',
 					title: 'This project taught me how time consuming game development is!'
 				}
 
