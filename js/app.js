@@ -84,7 +84,7 @@ app.controller('controller', [
 			gallery: [
 				{
 					id: 2,
-					url: '/img/gallery/hotpath/modules.jpg',
+					url: '/img/gallery/hotpath/modules.jpg', thumbUrl: '/img/thumbnails/hotpath/modules.jpg',
 					title: 'Powering Hotpath is a framework I wrote, called Alpaca. It uses a combination of modules and build tasks to facilitate slideshow viewing.'
 				}
 			],
@@ -144,7 +144,7 @@ app.controller('controller', [
 				},
 				{
 					id: 3,
-					url: 'img/gallery/devicepreview/phone.png'
+					url: 'img/gallery/devicepreview/phone.png', thumbUrl: 'img/thumbnails/devicepreview/phone.png'
 				},
 				{
 					id: 1,
@@ -215,7 +215,7 @@ app.controller('controller', [
 				},
 				{
 					id: 4,
-					url: 'img/gallery/msight/team.jpg'
+					url: 'img/gallery/msight/team.jpg', thumbUrl: 'img/thumbnails/msight/team.jpg'
 				},
 				{
 					id: 5,
@@ -253,7 +253,7 @@ app.controller('controller', [
 			gallery: [
 				{
 					id: 1,
-					url: '/img/gallery/carevoice.png'
+					url: '/img/gallery/carevoice.png', thumbUrl: '/img/thumbnails/carevoice.png'
 				}
 			],
 			description: 'A landing page for a Healthcare company that offers end-of-life planning services.'
