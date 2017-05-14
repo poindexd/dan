@@ -1,6 +1,8 @@
 var app = angular.module('app', [
 	'ngAnimate',
 	'thatisuday.ng-image-gallery',
+	//'masonry',
+	'akoenig.deckgrid',
 	'commandTemplates'
 ]);
 
@@ -76,6 +78,83 @@ app.controller('controller', [
 		}
 
 	}
+
+	$scope.methods = {};
+
+	$scope.openDesignGallery = function(index){
+		console.log('opening gallery for index: ', index)
+		$scope.methods.open(index);
+	}
+
+	$scope.design = [
+		{
+			id: 1,
+			url: 'img/gallery/fuego.png'
+		},
+		{
+			id: 2,
+			url: 'img/gallery/carevoice.png'
+		},
+		{
+			id: 3,
+			url: 'img/gallery/hotpath/hotpath_home.png'
+		},
+		{
+			id: 4,
+			url: 'img/gallery/iamcampaigne/preview.jpg'
+		},
+		{
+			id: 5,
+			url: 'img/gallery/iamcampaigne/preview_3.jpg'
+		},
+		{
+			id: 6,
+			url: 'img/gallery/wellopp/redesign.png'
+		},
+		{
+			id: 7,
+			url: 'img/gallery/wellopp/dd.png'
+		},
+		{
+			id: 8,
+			url: 'img/gallery/maposaur/maposaur_console.png'
+		},
+		{
+			id: 20,
+			url: 'img/gallery/vc.png'
+		},
+		//{
+		//	id: 21,
+		//	url: 'img/gallery/baasket.png'
+		//}
+		{
+			id: 9,
+			url: 'img/gallery/013.JPG'
+		},
+		{
+			id: 10,
+			url: 'img/gallery/namu.png'
+		},
+		{
+			id: 11,
+			url: 'img/gallery/033.PNG'
+		},
+		/*
+		{
+			id: 10,
+			url: 'img/gallery/033.PNG'
+		},
+		{
+			id: 11,
+			url: 'img/gallery/047.PNG'
+		},
+		{
+			id: 12,
+			url: 'img/gallery/namu.png'
+		}*/
+
+
+	];
 
 	$scope.projects = [
 		{ title: 'Hotpath',
@@ -206,7 +285,7 @@ app.controller('controller', [
 				{
 					id: 2,
 					url: 'img/gallery/msight/107.jpg', thumbUrl: 'img/thumbnails/msight/107.jpg',
-					title: 'Presentations. I am the zombie that sacrificed sleep to fix bugs'
+					title: 'Presentations. I am the zombie that sacrificed sleep'
 				},
 				{
 					id: 3,
@@ -368,6 +447,30 @@ app.controller('controller', [
 			description: 'Clear the console'
 		}
 	];
+
+	$scope.menuItems = [
+		{
+			name: 'Projects',
+			icon: 'developer_board',
+			command: 'projects'
+		},
+		{
+			name: 'Design',
+			icon: 'gesture',
+			command: 'design'
+		},
+		{
+			name: 'Bio',
+			icon: 'face',
+			command: 'bio'
+		},
+		{
+			name: 'Resume',
+			icon: 'card_travel',
+			command: 'resume'
+		}
+
+	];
 	
 	$scope.submitLine = function(line){
 
@@ -379,6 +482,10 @@ app.controller('controller', [
 		}
 		$scope.runCommand(line || $scope.inputLine);
 
+	}
+
+	$scope.closeMenu = function(){
+		$scope.menu = false;
 	}
 
 	$scope.showOutput = function(output, command){
@@ -407,7 +514,7 @@ app.controller('controller', [
 		} else if (command == 'resume'){
 			window.open('resume.html', '_blank');
 			$scope.showOutput('<br>', 'resume');
-		} else if (command == 'help' || command == 'profile' || command == 'social' || command == 'bio' || command == 'projects'){
+		} else if (command == 'design' || command == 'help' || command == 'profile' || command == 'social' || command == 'bio' || command == 'projects'){
 			$templateRequest('command-template-' + command).then(function(tpl){
 				var template = angular.element(tpl);
 				//element.after(template);
@@ -421,7 +528,7 @@ app.controller('controller', [
 		
 	}
 
-
+	$scope.menu = false;
 	$scope.init = function(){
 		historyEl = angular.element(
 			document.querySelector('#history')

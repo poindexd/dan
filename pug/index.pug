@@ -5,35 +5,31 @@ html
 		link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Inconsolata:400,700|Lato:400,700')
 		title Dan Poindexter
 		meta(name='description' content="I'm a developer that loves building simple web experiences.")
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
 		include include/tracking.pug
 		
 	body(ng-app='app' ng-controller='controller')
 
+		include include/menu.pug
+
 		main(ng-cloak).container
-			//#fs.grey.darken-3
-				ul
-					li blah
-					li blah
-					li blah
 			#output-window
 				#output
-			//.col.l12
-					.card
-						include include/cli-header.pug
-						include include/cli-body.pug
 
-		footer.hide-on-small-only
+		footer
 			.container
 				include include/cli-header.pug
 				include include/cli-body.pug
-				//p.grey-text.text-darken-2 &copy; Dan Poindexter 2017
 
-
-		//script(src='https://code.jquery.com/jquery-2.2.4.min.js')
-		//script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js')
+		//-script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+		//-script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js')
 		script(src='js/include/hammer.min.js')
+		//-script(src='js/include/masonry.js')
 		script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js')
 		script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js')
 		script(src='js/command-templates.js')
+		//-script(src='js/ng/angular-masonry-directive.js')
+		script(src='js/ng/angular-deckgrid.js')
 		script(src='js/ng/ng-image-gallery.js')
 		script(src='js/app.js')

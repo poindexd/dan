@@ -1,0 +1,6 @@
+ng-image-gallery(images='design' thumbnails='false' methods='methods')
+
+div(ng-init='deckgrid = true')
+	.deckgrid(deckgrid source='design' ng-if='deckgrid')
+		div(style='padding: 5px')
+			img.z-depth-1(ng-src='{{card.url}}' width='100%' ng-click='mother.openDesignGallery(card.$index)' style='cursor:pointer')

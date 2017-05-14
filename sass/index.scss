@@ -131,29 +131,29 @@ input{
 
 
 ::-webkit-scrollbar {
-  margin-left: -8px;
-  width: 8px;
+	margin-left: -8px;
+	width: 8px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px transparent;
-  -webkit-border-radius: 10px;
-  border-radius: 10px; 
+	-webkit-box-shadow: inset 0 0 6px transparent;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; 
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background: #ccc; }
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: #ccc; }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-  background: #cccccc; }
+	background: #cccccc; }
 
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
+	display: none !important;
 }
 
 .cursor {
@@ -183,6 +183,87 @@ input{
 	}
 }
 
+//deckgrid
+.deckgrid[deckgrid]::before {
+    /* Specifies that the grid should have a maximum of 4 columns. Each column will have the classes 'column' and 'column-1-4' */
+    content: '3 .column.column-1-3';
+    font-size: 0; /* See https://github.com/akoenig/angular-deckgrid/issues/14#issuecomment-35728861 */
+    visibility: hidden;
+}
+
+.deckgrid .column {
+    float: left;
+}
+
+.deckgrid .column-1-3 {
+    width: 33.332%;
+}
+//deckgrid
+
+@media #{$medium-and-down} {
+  i{
+  	&.large{
+  		font-size: 4em;
+  	}
+  }
+}
+#menu{
+	position: absolute;
+	top: 20;
+	left: 20;
+	width: 44px;
+	height: 44px;
+	border-radius: 22px;
+	overflow: hidden;
+	.floating-fill{
+		//display: none;
+	}
+	.floating-btn{
+		width: 44px;
+		height: 44px;
+		cursor: pointer;
+	}
+	.floating-btn, .floating-fill{
+		position: absolute;
+		padding: 10px;
+		border-radius: 22px;
+		-webkit-transition: all 0.1s ease;
+		-moz-transition: all 0.1s ease;
+		-o-transition: all 0.1s ease;
+		transition: all 0.1s ease;
+	}
+	.content{
+		opacity: 0;
+		//-webkit-transition: all 0.3s ease 0.3s;
+		//-moz-transition: all 0.3s ease 0.3s;
+		//-o-transition: all 0.3s ease 0.3s;
+		//transition: all 0.3s ease 0.3s;	
+	}
+
+	&.open{
+
+		right: 20;
+		bottom: 20;
+		width: auto;
+		height: auto;
+
+		.floating-fill{
+			//right:20px;
+			//bottom: 20px;
+			//display: block;
+			padding: 100vw;
+		}
+
+		.content{
+			opacity: 1;
+
+			.link{
+				cursor:pointer;
+			}
+		}
+	}
+}
+
 #resume{
 	padding: 60px 80px;
 
@@ -190,7 +271,7 @@ input{
 		p, h6{
 			margin: 0;
 		}
-    padding: 10px 0px;
+		padding: 10px 0px;
 	}
 
 	@media print{
@@ -209,21 +290,21 @@ input{
 
 			li {
 				text-indent: -13px;
-		    &:before{
-		    	content:'\2014';
-		    	text-indent: -5px;
-		    }
+				&:before{
+					content:'\2014';
+					text-indent: -5px;
+				}
 			}
 		}
 		
 		li {
 			font-weight: 300;
-	    //list-style-type: disc;
-	    //list-style-type: none;
-	    line-height: 1.5em;
-	    //margin-left: 15px;
+			//list-style-type: disc;
+			//list-style-type: none;
+			line-height: 1.5em;
+			//margin-left: 15px;
 
-  	}
+		}
 	}
 	blockquote {
 		border-left: 2px solid #eee;
@@ -232,3 +313,4 @@ input{
 		font-weight: 300;
 	}
 }
+
