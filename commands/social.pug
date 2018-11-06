@@ -1,15 +1,16 @@
 mixin link(title, icon, url)
-	.col.s2.center
-		//a(href=url): i.fa.fa-2x(class=icon)
+	.col.s3.center
+		//-a(href=url): i.fa.fa-2x(class=icon)
 		.circle.grey(style='width: 3em;height:3em;padding:0.75em;margin: 0 auto')
-			a(href=url)
+			a(href=url target='_blank')
 				img(src=icon style='width: 1.5em' alt=title)
 
 .card-panel
 	.row
-		+link('Facebook', './img/icons/facebook.svg', 'https://facebook.com/danmanpoindexter')
+		//-+link('Facebook', './img/icons/facebook.svg', 'https://facebook.com/danmanpoindexter')
 		+link('LinkedIn', './img/icons/linkedin.svg', 'https://linkedin.com/in/danpoindexter')
 		+link('GitHub', './img/icons/github.svg', 'https://github.com/poindexd')
-		+link('Soundcloud', './img/icons/soundcloud-logo.svg', 'https://soundcloud.com/dannyp93')
-		+link('Codepen', './img/icons/codepen.svg', 'https://codepen.io/poindexd')
+		//-+link('Soundcloud', './img/icons/soundcloud-logo.svg', 'https://soundcloud.com/dannyp93')
+		//-+link('Codepen', './img/icons/codepen.svg', 'https://codepen.io/poindexd')
+		+link('Photos', './img/icons/photos.svg', 'https://photos.app.goo.gl/QTiTypc7ZapzbFaz9')
 		+link('Mail', './img/icons/envelope-o.svg', 'mailto:poindexd@umich.edu')

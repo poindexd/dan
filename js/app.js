@@ -25,7 +25,7 @@ app.controller('controller', [
 
 	$scope.tags = {
 		angular: {
-			text: 'Angular',
+			text: 'AngularJS',
 			color: 'red'
 		},
 		android: {
@@ -88,6 +88,10 @@ app.controller('controller', [
 
 	$scope.design = [
 		{
+			id: 0,
+			url: 'img/gallery/respondent-dashboard.png'
+		},
+		{
 			id: 1,
 			url: 'img/gallery/fuego.png'
 		},
@@ -103,10 +107,10 @@ app.controller('controller', [
 			id: 4,
 			url: 'img/gallery/iamcampaigne/preview.jpg'
 		},
-		{
-			id: 5,
-			url: 'img/gallery/iamcampaigne/preview_3.jpg'
-		},
+		// {
+		// 	id: 5,
+		// 	url: 'img/gallery/iamcampaigne/preview_3.jpg'
+		// },
 		{
 			id: 6,
 			url: 'img/gallery/wellopp/redesign.png'
@@ -119,44 +123,59 @@ app.controller('controller', [
 			id: 8,
 			url: 'img/gallery/maposaur/maposaur_console.png'
 		},
+		// {
+		// 	id: 20,
+		// 	url: 'img/gallery/vc.png'
+		// },
 		{
-			id: 20,
-			url: 'img/gallery/vc.png'
+			id: 21,
+			url: 'img/gallery/baasket.png'
 		},
-		//{
-		//	id: 21,
-		//	url: 'img/gallery/baasket.png'
-		//}
-		{
-			id: 9,
-			url: 'img/gallery/013.JPG'
-		},
-		{
-			id: 10,
-			url: 'img/gallery/namu.png'
-		},
-		{
-			id: 11,
-			url: 'img/gallery/033.PNG'
-		},
-		/*
-		{
-			id: 10,
-			url: 'img/gallery/033.PNG'
-		},
-		{
-			id: 11,
-			url: 'img/gallery/047.PNG'
-		},
-		{
-			id: 12,
-			url: 'img/gallery/namu.png'
-		}*/
+		// {
+		// 	id: 9,
+		// 	url: 'img/gallery/013.JPG'
+		// },
+		// {
+		// 	id: 10,
+		// 	url: 'img/gallery/namu.png'
+		// },
+		// {
+		// 	id: 11,
+		// 	url: 'img/gallery/033.PNG'
+		// },
+		
+		// {
+		// 	id: 10,
+		// 	url: 'img/gallery/033.PNG'
+		// },
+		// {
+		// 	id: 11,
+		// 	url: 'img/gallery/047.PNG'
+		// },
+		// {
+		// 	id: 12,
+		// 	url: 'img/gallery/namu.png'
+		// }
 
 
 	];
 
 	$scope.projects = [
+		{ title: 'Respondent',
+			tags: ['angular', 'node_js', 'ui'],
+			image: '/img/projects/respondent-dashboard.jpg',
+			gallery: [
+				{
+					id: 1,
+					url: '/img/gallery/respondent-dashboard.png', thumbUrl: '/img/gallery/respondent-dashboard.png',
+					title: 'Redesigned and rebuilt most of the researcher dashboard, core features, and a new product.'
+				}
+			],
+			links: [
+				{title: 'Website', url: 'https://www.respondent.io'},
+			],
+			description: 'Leading frontend development and UI/UX at a startup with 100k monthly users'
+		},
 		{ title: 'Hotpath',
 			tags: ['angular', 'node_js', 'firebase'],
 			image: '/img/projects/dd.jpg',
@@ -171,7 +190,7 @@ app.controller('controller', [
 				{title: 'Website', url: 'https://hotpath.org'},
 				{title: 'Slides', url: 'https://docs.google.com/presentation/d/1fXGS0zLGAp8lU5KhXl2R51ZVs4z0pNzwc6QLeT1XUW4/edit#slide=id.g1af1d95d23_0_558'}
 			],
-			description: 'Managing a survey creation and data collection tool. Estimated beta - June 2017'
+			description: 'Managed a survey creation and data collection tool.'
 		},
 		{ title: 'Wellopp',
 			tags: ['web', 'ui'],
@@ -182,11 +201,11 @@ app.controller('controller', [
 					url: 'img/gallery/wellopp/redesign.png', thumbUrl: 'img/thumbnails/wellopp/redesign.png',
 					title: 'Redesigned the existing client-facing dashboard, adding a timeline  and report feature.'
 				},
-				{
-					id: 2,
-					url: 'img/gallery/wellopp/wellopp.png', thumbUrl: 'img/thumbnails/wellopp/wellopp.png',
-					title: 'The new wellopp.com website, as part of the rebranding from Homeward Healthcare.'
-				},
+				// {
+				// 	id: 2,
+				// 	url: 'img/gallery/wellopp/wellopp.png', thumbUrl: 'img/thumbnails/wellopp/wellopp.png',
+				// 	title: 'The new wellopp.com website, as part of the rebranding from Homeward Healthcare.'
+				// },
 				{
 					id: 3,
 					url: 'img/gallery/wellopp/splash.png', thumbUrl: 'img/thumbnails/wellopp/splash.png',
@@ -439,6 +458,10 @@ app.controller('controller', [
 			description: 'Find me on the web'
 		},
 		{
+			name: 'photos',
+			description: 'Photos of my life'
+		},
+		{
 			name: 'help',
 			description: 'Display the help menu'
 		},	
@@ -514,6 +537,9 @@ app.controller('controller', [
 		} else if (command == 'resume'){
 			window.open('resume.html', '_blank');
 			$scope.showOutput('<br>', 'resume');
+		} else if (command == 'photos'){ 
+			window.open('https://photos.app.goo.gl/QTiTypc7ZapzbFaz9', '_blank');
+			$scope.showOutput('<br>', 'photos');
 		} else if (command == 'design' || command == 'help' || command == 'profile' || command == 'social' || command == 'bio' || command == 'projects'){
 			$templateRequest('command-template-' + command).then(function(tpl){
 				var template = angular.element(tpl);

@@ -271,7 +271,7 @@ input{
 		p, h6{
 			margin: 0;
 		}
-		padding: 10px 0px;
+		padding: 5px 0px;
 	}
 
 	@media print{
@@ -309,8 +309,16 @@ input{
 	blockquote {
 		border-left: 2px solid #eee;
 	}
-	p{
+	p, .title, .date {
 		font-weight: 300;
+	}
+
+	.date {
+		//font-style: italic;
+		//font-size: 0.8em;
 	}
 }
 
+.inline-block {
+	display: inline-block;
+}
