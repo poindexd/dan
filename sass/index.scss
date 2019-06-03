@@ -105,6 +105,8 @@ input{
 	flex: 1;
 	//justify-content: flex-end;
 	overflow-y: auto;
+	height: calc(100vh - 240px);
+	margin-top: 120px;
 	
 	//height: 100%;
 

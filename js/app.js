@@ -523,8 +523,14 @@ app.controller('controller', [
 		}
 		$scope.inputLine = '';
 		$timeout(function(){
+			console.log('help')
+			anime({
+				targets: outputWindowEl,
+				scrollTop: prev_height,
+				duration: 500,
+				easing: 'linear'
+			})
 			bodyEl.scrollTop = bodyEl.scrollHeight;
-			outputWindowEl.scrollTop = prev_height;
 		}, 50, false);
 	}
 
@@ -601,7 +607,9 @@ app.controller('controller', [
 		}
 		if (cur == commands.length){
 			$scope.cursorOffset = 0;
-			callback();
+			if (callback) {
+				callback();
+			}
 			return;
 		}
 
