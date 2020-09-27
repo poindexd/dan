@@ -284,6 +284,11 @@ input{
 	h6{
 		font-weight: 700;
 	}
+	.blockquote {
+		h6 {
+			font-weight: normal;
+		}
+	}
 	ul {
 
 		&.dashed{
