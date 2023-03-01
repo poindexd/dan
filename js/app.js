@@ -184,7 +184,7 @@ app.controller("controller", [
           },
         ],
         description:
-          "API to surface ecological impact of food items given a barcode. $5k Postman API hackathon honorable mention",
+          "API to surface ecological impact of food items given a barcode. $5k Postman API hackathon winner",
       },
       {
         title: "Respondent",
