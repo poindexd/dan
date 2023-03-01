@@ -4,6 +4,6 @@
 
 	.content.valign-wrapper(ng-show='menu' style='position: absolute;top:40;left:40;right:40;bottom:40; z-index:9998;overflow:hidden')
 		.valign(style='width:100%'): .row
-			.link.col.s12.l3.center.black-text(ng-repeat='item in menuItems' ng-click='closeMenu();playCommands(["clear", item.command]);')
+			.link.col.s12.l4.center.black-text(ng-repeat='item in menuItems' ng-click='closeMenu();playCommands(["clear", item.command]);')
 				i.material-icons.large {{item.icon}}
 				h5 {{item.name}}

@@ -11,7 +11,7 @@ var filter = require("gulp-filter");
 
 var templateCache = require("gulp-angular-templatecache");
 var uglify = require("gulp-uglify");
-var sass = require("gulp-sass");
+var sass = require("gulp-sass")(require("sass"));
 var concat = require("gulp-concat");
 var rename = require("gulp-rename");
 var sourcemaps = require("gulp-sourcemaps");
@@ -33,7 +33,9 @@ gulp.task("compile-commands", function () {
     .pipe(
       templateCache("command-templates.js", {
         transformUrl: function (url) {
-          return "command-template-" + url.replace(/\.html$/, "");
+          return (
+            "command-template-" + url.replace(/\.html$/, "").replace("/", "")
+          );
         },
         standalone: true,
         module: "commandTemplates",
