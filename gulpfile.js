@@ -80,6 +80,11 @@ gulp.task("watch", function () {
 });
 
 gulp.task(
+  "build",
+  gulp.parallel("compile-commands", "pug", "sass", "compress")
+);
+
+gulp.task(
   "default",
   gulp.parallel(
     "compile-commands",
